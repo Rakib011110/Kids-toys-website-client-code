@@ -3,11 +3,13 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../../Hooks/Title";
 
 const Mytoys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
+  useTitle("my toy");
 
   useEffect(() => {
     fetch(
@@ -32,7 +34,6 @@ const Mytoys = () => {
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify({ status: "confirm" }),
         }
       )
         .then((res) => res.json())

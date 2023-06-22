@@ -9,7 +9,10 @@ import "aos/dist/aos.css";
 import Info from "../Common/Info";
 import Gallary from "../Common/Gallary";
 import HeaderBanner from "../Common/HeaderBAnner/HeaderBanner";
+import useTitle from "../../Hooks/Title";
 const Home = () => {
+  useTitle("home");
+
   return (
     <div>
       <ParticlesBg

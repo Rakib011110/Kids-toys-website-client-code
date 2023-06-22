@@ -4,10 +4,13 @@ import { useLoaderData } from "react-router-dom";
 import ParticlesBg from "particles-bg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../../Hooks/Title";
 
 const UpdateToys = () => {
   const { user } = useContext(AuthContext);
   const data = useLoaderData();
+  useTitle("update");
+
   console.log(data);
   const [update, setUpdate] = useState(data);
   const handleUpdateUser = (e) => {

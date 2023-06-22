@@ -3,9 +3,11 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import ParticlesBg from "particles-bg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../../Hooks/Title";
 const AddToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  useTitle("Add toy");
 
   const handleSubmit = (e) => {
     e.preventDefault();

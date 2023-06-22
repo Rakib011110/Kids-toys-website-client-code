@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ToyDetails from "../../ToysCategory/ToyDetails";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useTitle from "../../../Hooks/Title";
+import Courosel from "../../Common/Courosel";
 
 const AllToys = () => {
   const [alltoys, setAllToys] = useState([]);
   const [selectedToy, setSelectedToy] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const { user } = useContext(AuthContext);
+  useTitle("all toy");
 
   useEffect(() => {
     fetch("https://kids-toys-website-servercode-code.vercel.app/addtoys")
@@ -15,9 +17,9 @@ const AllToys = () => {
       .then((data) => setAllToys(data));
   }, []);
 
-  // const openModal = (toy) => {
-  //   setSelectedToy(toy);
-  // };
+  const openModal = (toy) => {
+    setSelectedToy(toy);
+  };
 
   const closeModal = () => {
     setSelectedToy(null);
@@ -33,6 +35,7 @@ const AllToys = () => {
 
   return (
     <div className="gap-5 mt-10 container mx-auto">
+      <Courosel></Courosel>
       <div className="mb-4 flex justify-end">
         <input
           type="text"

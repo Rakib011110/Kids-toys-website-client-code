@@ -12,6 +12,7 @@ const ToyDetails = ({ toy, closeModal }) => {
     sellerName,
     subCategorym,
   } = toy;
+
   return (
     <div>
       <div className="bg-white rounded p-4 w-full ">

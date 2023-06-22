@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
+import useTitle from "../../../Hooks/Title";
 
 const Blog = () => {
-  const componentRef = useRef();
+  useTitle("BLOG");
 
   const questions = [
     {
